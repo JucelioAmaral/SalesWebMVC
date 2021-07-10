@@ -26,6 +26,7 @@ namespace SalesWebMVC.Controllers
         public async Task<IActionResult> Index()
         {
             var list = await _sellerService.FindAllAsync();
+            ViewData["NomeDoSistema"] = "Sistema de Vendedores - Salles Web MVC app from C# course.";
             return View(list);
         }
         public async Task<IActionResult> Create()

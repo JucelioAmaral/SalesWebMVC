@@ -4,21 +4,34 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SalesWebMVC.Migrations
 {
-    public partial class OtherEntities : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Departament",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Departament", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Seller",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: true),
-                    Email = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(maxLength: 60, nullable: false),
+                    Email = table.Column<string>(nullable: false),
                     BirthDate = table.Column<DateTime>(nullable: false),
                     BaseSalary = table.Column<double>(nullable: false),
-                    DepartamentId = table.Column<int>(nullable: true)
+                    DepartamentId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -28,7 +41,7 @@ namespace SalesWebMVC.Migrations
                         column: x => x.DepartamentId,
                         principalTable: "Departament",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -71,6 +84,9 @@ namespace SalesWebMVC.Migrations
 
             migrationBuilder.DropTable(
                 name: "Seller");
+
+            migrationBuilder.DropTable(
+                name: "Departament");
         }
     }
 }

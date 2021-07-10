@@ -80,9 +80,15 @@ namespace SalesWebMVC
 
             app.UseMvc(routes =>
             {
+                //EXPLICAÇÃO: Determina a controler que será chamada ao iniciar, no caso, a Sellers (SellersControler)
+                //que por sua vez, como padrão e escrito, a ação (action) será chamar
+                // a Index (Index.cshtml) dentro da pasta "Views/Sellers"
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Sellers}/{action=Index}/{id?}");// LE-SE: Chame a SellersControler e se não digitar a ação, chame a Index.
+                    // O "id" com a "?" é um atributo opcional.
+
+                    
             });
         }
     }
