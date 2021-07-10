@@ -8,12 +8,12 @@ Aplicação Web, Asp Net Core MVC, feita em .Net core 2.1, usando Entity framewo
 2. [Node.js](https://nodejs.org/en/download/)
 3. [ASP.NET Core 2.1+](https://dotnet.microsoft.com/download/dotnet-core/2.1)
 4. [MySql](https://dev.mysql.com/downloads/mysql/), clicar em "Go to Download Page";
-4.1 Clicar no botão "Download" da maior instalação "Windows (x86, 32-bit), MSI Installer";
-4.2 Clicar em "No thanks, just start my download." para baixar a instalação e realizar a instalação.
+4.1. Clicar no botão "Download" da maior instalação "Windows (x86, 32-bit), MSI Installer";
+4.2. Clicar em "No thanks, just start my download." para baixar a instalação e realizar a instalação.
 
 ## Como baixar o código
 
-git clone 
+git clone https://github.com/JucelioAmaral/SalesWebMVC.git
 
 ## Como configurar?
 
